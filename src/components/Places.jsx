@@ -11,7 +11,9 @@ export default function Places({
     <section className="places-category">
       <h2>{title}</h2>
       {isLoading && <p style={{ textAlign: "center" }}>{loadingText}</p>}
-      {!isLoading && <p className="fallback-text">{fallbackText}</p>}
+      {!isLoading && places.legth < 0 && (
+        <p className="fallback-text">{fallbackText}</p>
+      )}
       {!isLoading && (
         <ul className="places">
           {places.map((place) => (
